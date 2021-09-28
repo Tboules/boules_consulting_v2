@@ -1,19 +1,37 @@
-import { Box, Heading, VStack } from "@chakra-ui/layout"
+import BCLink from "../../../components/BCLink"
+import { Heading, HStack } from "@chakra-ui/layout"
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
+import DesktopNav from "./DesktopNav"
+import MobileCollapse from "./MobileCollapse"
 
 const Header = () => {
   return (
-    <Box display="block" height="7rem" width="100%" bg="bc.gray.white">
-      <VStack
-        maxW="100rem"
-        justifyContent="center"
-        alignItems="flex-start"
-        margin="0 auto"
-        height="100%"
-      >
-        <Heading color="bc.teal.primary">Boules Consulting</Heading>
-      </VStack>
-    </Box>
+    <HStack
+      justifyContent="space-between"
+      alignItems="center"
+      height="100%"
+      width="100%"
+      p={{ base: "1rem 2rem", lg: "1.875rem 4rem" }}
+    >
+      <BCLink to="/">
+        <HStack spacing={{ base: 3, lg: 5 }}>
+          <StaticImage
+            src="../../../assets/logos/Boules-Consulting-Logo.svg"
+            alt="Boules Consulting Logo"
+          />
+          <Heading
+            color="bc.teal.primary"
+            fontSize={{ base: "1.375rem", lg: "1.825rem", xl: "2.275rem" }}
+            maxW={{ base: "60%", lg: "100%" }}
+          >
+            Boules Consulting
+          </Heading>
+        </HStack>
+      </BCLink>
+      <MobileCollapse />
+      <DesktopNav />
+    </HStack>
   )
 }
 
