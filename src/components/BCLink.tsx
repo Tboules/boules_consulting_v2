@@ -1,10 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
-import { chakra } from "@chakra-ui/react"
+import { chakra, LinkProps } from "@chakra-ui/react"
 
 const StylableLink = chakra(Link)
 
-const BCLink = props => {
+type BCLinkProps = LinkProps & {
+  to: string
+}
+
+const BCLink: React.FC<BCLinkProps> = props => {
   return <StylableLink {...props} />
 }
 
