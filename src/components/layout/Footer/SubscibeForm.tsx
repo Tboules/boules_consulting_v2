@@ -17,6 +17,7 @@ const SubscibeForm = () => {
           borderRadius="1.5rem"
           color="bc.gray.primary"
           {...register("email")}
+          fontSize={{ base: ".875rem", xl: "1rem" }}
         />
         <Button
           borderRadius="1.5rem"
@@ -25,6 +26,7 @@ const SubscibeForm = () => {
           type="submit"
           _hover={{ bg: "bc.gray.dark" }}
           fontWeight="400"
+          fontSize={{ base: ".875rem", xl: "1rem" }}
         >
           Subscribe!
         </Button>

@@ -29,7 +29,7 @@ const FooterNav = () => {
       </VStack>
       <VStack
         justifyContent="space-evenly"
-        p={{ base: "0", lg: "1rem 1.5rem" }}
+        p={{ base: ".5rem .5rem 0", lg: "1rem 1.5rem" }}
         flex="2"
       >
         {secondHalf.map(link => {
