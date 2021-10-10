@@ -12,6 +12,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    // `gatsby-plugin-graphql-codegen`,
     `gatsby-plugin-typescript`,
     {
       resolve: "@chakra-ui/gatsby-plugin",

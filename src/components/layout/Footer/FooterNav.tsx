@@ -6,7 +6,6 @@ import BCLink from "../../../components/BCLink"
 const FooterNav = () => {
   const firstHalf = taxonomy.NAVIGATION.slice(0, 3)
   const secondHalf = taxonomy.NAVIGATION.slice(3)
-  console.log(firstHalf, secondHalf)
 
   return (
     <Flex flex="1" direction={{ base: "column", lg: "row" }}>
