@@ -15,7 +15,6 @@ type BelowHeroProps = {
 }
 
 const BelowHero: React.FC<BelowHeroProps> = ({ data }) => {
-  console.log(data)
   const image = getImage(data.image.gatsbyImageData)
 
   return (
@@ -28,6 +27,7 @@ const BelowHero: React.FC<BelowHeroProps> = ({ data }) => {
             left="50%"
             transform="translate(-50%, -50%)"
             fontSize={{ base: "1rem", lg: "1.1rem" }}
+            textShadow="1px 2px 3px rgba(0, 0, 0, 0.2)"
           >
             {data.text.text}
           </Text>
@@ -40,7 +40,11 @@ const BelowHero: React.FC<BelowHeroProps> = ({ data }) => {
             <Image src={logo} alt="" height="400px" w="auto" />
           </Flex>
         </Box>
-        <Box flex="1" display={{ base: "none", lg: "block" }}>
+        <Box
+          flex="1"
+          display={{ base: "none", lg: "block" }}
+          alignSelf="center"
+        >
           <GatsbyImage image={image} alt="office image" />
         </Box>
       </SwitchFlex>

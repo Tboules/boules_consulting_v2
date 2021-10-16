@@ -27,7 +27,7 @@ const MobileCollapse = () => {
           right="0"
           bgColor="bcon.teal.primary"
           color="white"
-          zIndex="20"
+          zIndex="100"
           alignItems="flex-start"
           p="1rem"
         >

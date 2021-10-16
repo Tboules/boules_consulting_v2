@@ -8,7 +8,6 @@ type BannerProps = {
 }
 
 const Banner: React.FC<BannerProps> = ({ bannerData }) => {
-  console.log(bannerData)
   const image = getImage(bannerData.backgroundImage.gatsbyImageData)
 
   return (

@@ -13,6 +13,7 @@ const Header = () => {
       height="100%"
       width="100%"
       p={{ base: "1rem", lg: "1.875rem 3rem" }}
+      bg="white"
     >
       <BCLink to="/">
         <HStack spacing={{ base: 3, lg: 5 }}>

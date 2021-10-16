@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/Banner"
 import BelowHero from "../components/Home/BelowHero"
+import Promotion from "../components/Home/Promotion"
 
 type HomePageProps = {
   data: {
@@ -16,11 +17,14 @@ type HomePageProps = {
 const IndexPage: React.FC<HomePageProps> = ({ data }) => {
   const { contentfulHomePage } = data
 
+  console.log(data)
+
   return (
     <Layout>
       <Seo title="Home" />
       <Banner bannerData={contentfulHomePage.homeBanner} />
       <BelowHero data={contentfulHomePage.belowHero} />
+      <Promotion />
     </Layout>
   )
 }
