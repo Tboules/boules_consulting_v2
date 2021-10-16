@@ -5,11 +5,12 @@ const theme = {
     global: {
       body: {
         fontFamily: "Helvetica Neue, sans-serif",
+        color: "#707070",
       },
     },
   },
   colors: {
-    bc: {
+    bcon: {
       teal: {
         primary: "#769DA2",
         secondary: "#5B8B87",

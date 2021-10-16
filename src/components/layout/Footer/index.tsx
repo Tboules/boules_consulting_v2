@@ -17,7 +17,7 @@ const FooterHeading = ({ title }: { title: string }) => {
 const Footer = () => {
   return (
     <ContLimits
-      bg="bc.teal.primary"
+      bg="bcon.teal.primary"
       height={{ base: "auto", lg: "23.75rem" }}
       color="white"
     >

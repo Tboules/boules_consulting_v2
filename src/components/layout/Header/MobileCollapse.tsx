@@ -14,7 +14,7 @@ const MobileCollapse = () => {
     <Box display={{ base: "block", lg: "none" }}>
       <IconButton
         aria-label="open mobile nav"
-        icon={<HamburgerIcon w={6} h={6} color="bc.teal.primary" />}
+        icon={<HamburgerIcon w={6} h={6} color="bcon.teal.primary" />}
         bg="transparent"
         onClick={toggleMobileNav}
       />
@@ -25,7 +25,7 @@ const MobileCollapse = () => {
           bottom="0"
           left="0"
           right="0"
-          bgColor="bc.teal.primary"
+          bgColor="bcon.teal.primary"
           color="white"
           zIndex="20"
           alignItems="flex-start"

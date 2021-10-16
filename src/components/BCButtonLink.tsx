@@ -6,7 +6,7 @@ const BCButtonLink = ({ children, ...rest }) => {
     <BCLink
       p="1rem 3rem"
       borderRadius="2.5rem"
-      bg="bc.teal.primary"
+      bg="bcon.teal.primary"
       color="white"
       {...rest}
     >

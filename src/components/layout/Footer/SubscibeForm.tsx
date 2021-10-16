@@ -15,16 +15,16 @@ const SubscibeForm = () => {
           placeholder="Email:"
           bg="white"
           borderRadius="1.5rem"
-          color="bc.gray.primary"
+          color="bcon.gray.primary"
           {...register("email")}
           fontSize={{ base: ".875rem", xl: "1rem" }}
         />
         <Button
           borderRadius="1.5rem"
-          bg="bc.gray.primary"
+          bg="bcon.gray.primary"
           p="0 2rem"
           type="submit"
-          _hover={{ bg: "bc.gray.dark" }}
+          _hover={{ bg: "bcon.gray.dark" }}
           fontWeight="400"
           fontSize={{ base: ".875rem", xl: "1rem" }}
         >

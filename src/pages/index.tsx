@@ -5,6 +5,7 @@ import { ContentfulHomePage } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/Banner"
+import BelowHero from "../components/Home/BelowHero"
 
 type HomePageProps = {
   data: {
@@ -19,6 +20,7 @@ const IndexPage: React.FC<HomePageProps> = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <Banner bannerData={contentfulHomePage.homeBanner} />
+      <BelowHero data={contentfulHomePage.belowHero} />
     </Layout>
   )
 }

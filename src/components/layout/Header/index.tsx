@@ -21,7 +21,7 @@ const Header = () => {
             alt="Boules Consulting Logo"
           />
           <Heading
-            color="bc.teal.primary"
+            color="bcon.teal.primary"
             fontSize={{ base: "1.375rem", lg: "1.825rem", xl: "2.275rem" }}
             maxW={{ base: "60%", lg: "100%" }}
           >
