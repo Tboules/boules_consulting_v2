@@ -9,7 +9,12 @@ type BCLinkProps = LinkProps & {
 }
 
 const BCLink: React.FC<BCLinkProps> = props => {
-  return <StylableLink {...props} />
+  return (
+    <StylableLink
+      _hover={{ textDecoration: "underline", fontWeight: "400" }}
+      {...props}
+    />
+  )
 }
 
 export default BCLink

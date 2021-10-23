@@ -7,6 +7,8 @@ import Seo from "../components/seo"
 import Banner from "../components/Banner"
 import BelowHero from "../components/Home/BelowHero"
 import Promotion from "../components/Home/Promotion"
+import HowWeCanHelp from "../components/Home/HowWeCanHelp"
+import Testimonials from "../components/Testimonials"
 
 type HomePageProps = {
   data: {
@@ -25,6 +27,8 @@ const IndexPage: React.FC<HomePageProps> = ({ data }) => {
       <Banner bannerData={contentfulHomePage.homeBanner} />
       <BelowHero data={contentfulHomePage.belowHero} />
       <Promotion />
+      <HowWeCanHelp data={contentfulHomePage.howWeHelpStack} />
+      <Testimonials data={contentfulHomePage} />
     </Layout>
   )
 }

@@ -15,7 +15,7 @@ const FixedLogoBackground = () => {
         h="100%"
         margin="auto"
         transform="rotate(45deg)"
-        opacity="0.02"
+        opacity="0.03"
       />
     </Box>
   )

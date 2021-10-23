@@ -11,18 +11,23 @@ const Promotion = () => {
 
   return (
     <ContLimits>
-      <Flex justifyContent="center" onSubmit={handleSubmit(onSubmit)}>
+      <Flex justifyContent="center" p="2rem 0">
         <Box>
-          <Heading as="h6" size="md" textAlign="center">
+          <Heading as="h6" size="lg" textAlign="center">
             Grab your
-            <Box as="span" color="bcon.babyBlue" p="0 .2rem">
+            <Box as="span" color="bcon.babyBlue" p="0 .5rem">
               FREE
             </Box>
             grant proposal template and checklist by entering your email below!
           </Heading>
 
-          <chakra.form w="100%">
-            <SwitchFlex w="inherit" p="1rem">
+          <chakra.form
+            w="100%"
+            maxW="55rem"
+            m="auto"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <SwitchFlex w="inherit" p="1.5rem">
               <Input
                 placeholder="Email:"
                 bg="white"
