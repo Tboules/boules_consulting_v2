@@ -5,7 +5,8 @@ import { ContentfulStack } from "../../../graphql-types"
 import CardBody from "../CardBody"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import BCLink from "../BCLink"
-import { ArrowForwardIcon } from "@chakra-ui/icons"
+import { CgArrowLongRight } from "react-icons/cg"
+import { Icon } from "@chakra-ui/react"
 
 type HowWeCanHelpProps = {
   data: ContentfulStack
@@ -77,10 +78,11 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
                 position="absolute"
                 bottom="1.2rem"
                 right="1.2rem"
+                lineHeight="1.75rem"
               >
                 Learn More
                 <Box as="span">
-                  <ArrowForwardIcon w={7} />
+                  <Icon as={CgArrowLongRight} w={9} h={6} />
                 </Box>
               </BCLink>
             </CardBody>

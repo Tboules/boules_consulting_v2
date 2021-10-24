@@ -9,6 +9,7 @@ import BelowHero from "../components/Home/BelowHero"
 import Promotion from "../components/Home/Promotion"
 import HowWeCanHelp from "../components/Home/HowWeCanHelp"
 import Testimonials from "../components/Testimonials"
+import OurHappyCustomers from "../components/OurHappyCustomers"
 
 type HomePageProps = {
   data: {
@@ -28,7 +29,8 @@ const IndexPage: React.FC<HomePageProps> = ({ data }) => {
       <BelowHero data={contentfulHomePage.belowHero} />
       <Promotion />
       <HowWeCanHelp data={contentfulHomePage.howWeHelpStack} />
-      <Testimonials data={contentfulHomePage} />
+      <Testimonials data={contentfulHomePage.testimonialSlides} />
+      <OurHappyCustomers data={contentfulHomePage.carouselImages} />
     </Layout>
   )
 }
@@ -76,6 +78,22 @@ export const query = graphql`
             description
           }
           internalLink
+        }
+      }
+      testimonialSlides {
+        name
+        testimony {
+          testimony
+        }
+        jobTitle
+        companyName
+        image {
+          gatsbyImageData(quality: 100)
+        }
+      }
+      carouselImages {
+        images {
+          gatsbyImageData
         }
       }
     }
