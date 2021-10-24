@@ -1,23 +1,27 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Box, Flex, Heading, Text } from "@chakra-ui/layout"
 import { ContentfulCarouselImages } from "../../../graphql-types"
 import ContLimits from "../ContLimits"
 import useCustomEmbla from "../../hooks/useCustomEmbla"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Button } from "@chakra-ui/button"
 
 type OurHappyCustomersProps = {
   data: ContentfulCarouselImages
 }
 
 const OurHappyCustomers: React.FC<OurHappyCustomersProps> = ({ data }) => {
-  const { refs, next, previous } = useCustomEmbla({
-    loop: true,
-    dragFree: true,
-    containScroll: "trimSnaps",
-  })
+  const { refs, next, previous } = useCustomEmbla(
+    {
+      loop: true,
+      dragFree: true,
+      containScroll: "trimSnaps",
+    },
+    true
+  )
 
   return (
-    <ContLimits p="2rem 0">
+    <ContLimits p="0rem 0">
       <Heading textAlign="center" fontWeight="600">
         Some Of Our Happy Customers
       </Heading>
@@ -28,6 +32,7 @@ const OurHappyCustomers: React.FC<OurHappyCustomersProps> = ({ data }) => {
 
             return (
               <Box
+                key={i}
                 flex={{ base: "0 0 50%", lg: "0 0 20%" }}
                 m="0 2rem"
                 position="relative"

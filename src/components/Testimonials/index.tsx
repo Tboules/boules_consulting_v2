@@ -18,7 +18,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ data }) => {
     skipSnaps: false,
   })
   return (
-    <ContLimits p="2rem 0" maxW="1200px" margin="auto" position="relative">
+    <ContLimits p="3rem 0 2rem" maxW="1200px" margin="auto" position="relative">
       <Heading textAlign="center" fontWeight="600" color="bcon.teal.primary">
         What Our Clients Had To Say:
       </Heading>
@@ -40,6 +40,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ data }) => {
                   <Box
                     flex="2"
                     alignSelf="center"
+                    textShadow="0px 1px 2px rgba(0, 0, 0, 0.1)"
                     dangerouslySetInnerHTML={{
                       __html: slide.testimony.testimony,
                     }}

@@ -50,7 +50,7 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
         {data.cards.map(card => {
           const image = getImage(card.icon.gatsbyImageData)
           return (
-            <CardBody position="relative">
+            <CardBody key={card.title} position="relative">
               <Box alignSelf="center" p="2rem">
                 <GatsbyImage
                   style={{ height: "80px" }}

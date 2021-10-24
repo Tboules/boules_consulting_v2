@@ -10,6 +10,7 @@ import Promotion from "../components/Home/Promotion"
 import HowWeCanHelp from "../components/Home/HowWeCanHelp"
 import Testimonials from "../components/Testimonials"
 import OurHappyCustomers from "../components/OurHappyCustomers"
+import ReachOut from "../components/ReachOut"
 
 type HomePageProps = {
   data: {
@@ -31,6 +32,7 @@ const IndexPage: React.FC<HomePageProps> = ({ data }) => {
       <HowWeCanHelp data={contentfulHomePage.howWeHelpStack} />
       <Testimonials data={contentfulHomePage.testimonialSlides} />
       <OurHappyCustomers data={contentfulHomePage.carouselImages} />
+      <ReachOut />
     </Layout>
   )
 }

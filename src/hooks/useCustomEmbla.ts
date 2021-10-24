@@ -2,23 +2,21 @@ import { EmblaOptionsType } from "embla-carousel"
 import useEmblaCarousel from "embla-carousel-react"
 import { useEffect } from "react"
 
-export default function useCustomEmbla(options?: EmblaOptionsType) {
+export default function useCustomEmbla(
+  options?: EmblaOptionsType,
+  auto?: boolean
+) {
   const [firstRef, embla] = useEmblaCarousel({ ...options })
-  // const [secondRef, embla2] = useEmblaCarousel({ ...options })
 
-  // useEffect(() => {
-  //   if (!embla || !embla2) return
-  //   embla?.on("select", () => {
-  //     embla2?.scrollTo(embla.selectedScrollSnap())
-  //   })
-  // }, [embla])
-
-  // useEffect(() => {
-  //   if (!embla || !embla2) return
-  //   embla2?.on("select", () => {
-  //     embla?.scrollTo(embla2.selectedScrollSnap())
-  //   })
-  // }, [embla2])
+  useEffect(() => {
+    setInterval(() => {
+      if (auto) {
+        if (embla?.canScrollNext()) {
+          embla?.scrollNext()
+        }
+      }
+    }, 4000)
+  }, [embla])
 
   const next = () => {
     embla?.scrollNext()
@@ -31,7 +29,6 @@ export default function useCustomEmbla(options?: EmblaOptionsType) {
   return {
     refs: {
       firstRef,
-      // secondRef,
     },
     next,
     previous,

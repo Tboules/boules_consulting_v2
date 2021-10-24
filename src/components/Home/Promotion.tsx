@@ -45,7 +45,7 @@ const Promotion = () => {
                 bg="bcon.teal.primary"
                 p="1rem 3rem"
                 type="submit"
-                _hover={{ bg: "bcon.gray.dark" }}
+                _hover={{ bg: "bcon.teal.dark" }}
                 fontWeight="500"
                 fontSize={{ base: ".875rem", xl: "1rem" }}
                 color="white"
