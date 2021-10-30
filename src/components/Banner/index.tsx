@@ -41,7 +41,7 @@ const Banner: React.FC<BannerProps> = ({ bannerData }) => {
             fontSize={{ base: "xl", lg: "3xl" }}
             color="bcon.babyBlue"
           >
-            {bannerData.subHeader}
+            {bannerData?.subHeader}
           </Heading>
         </VStack>
       </Box>

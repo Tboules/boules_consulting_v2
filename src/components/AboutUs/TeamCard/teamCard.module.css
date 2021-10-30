@@ -1,0 +1,3 @@
+.outerCard:hover .innerCard {
+  transform: rotateY(180deg);
+}

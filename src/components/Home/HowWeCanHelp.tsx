@@ -7,6 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import BCLink from "../BCLink"
 import { CgArrowLongRight } from "react-icons/cg"
 import { Icon } from "@chakra-ui/react"
+import CardGrid from "../CardGrid"
 
 type HowWeCanHelpProps = {
   data: ContentfulStack
@@ -37,16 +38,7 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
       >
         {data.text2.text2}
       </Heading>
-      <Grid
-        pt="5rem"
-        gridTemplateColumns={{
-          base: "1fr",
-          md: "repeat(2, 1fr)",
-          xl: "repeat(4, 1fr)",
-        }}
-        gridAutoRows="auto"
-        gap={{ base: "1rem", lg: "1.5rem", xl: "2rem" }}
-      >
+      <CardGrid pt="5rem">
         {data.cards.map(card => {
           const image = getImage(card.icon.gatsbyImageData)
           return (
@@ -68,7 +60,7 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
               >
                 {card.title}
               </Heading>
-              <Text p="1rem .5rem 3rem" color="bcon.gray.primary">
+              <Text p="1.5rem .5rem 5rem" color="bcon.gray.primary">
                 {card.description.description}
               </Text>
               <BCLink
@@ -88,7 +80,7 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
             </CardBody>
           )
         })}
-      </Grid>
+      </CardGrid>
     </ContLimits>
   )
 }
