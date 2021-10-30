@@ -6,6 +6,7 @@ import { ContentfulAboutUsPage } from "../../../graphql-types"
 import Banner from "../../components/Banner"
 import WhatWeDo from "../../components/AboutUs/WhatWeDo"
 import OurTeam from "../../components/AboutUs/OurTeam"
+import OurHappyCustomers from "../../components/OurHappyCustomers"
 
 type AboutUsProps = {
   data: {
@@ -21,6 +22,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
       <Banner bannerData={contentfulAboutUsPage.aboutUsBanner} />
       <WhatWeDo data={contentfulAboutUsPage.whatWeDo} />
       <OurTeam data={contentfulAboutUsPage.ourTeam} />
+      <OurHappyCustomers data={contentfulAboutUsPage.carouselImages} />
     </Layout>
   )
 }
@@ -48,7 +50,7 @@ export const query = graphql`
         id
         cardSize
         employeeImage {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH, quality: 100)
         }
         name
         jobTitle

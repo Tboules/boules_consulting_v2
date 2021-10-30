@@ -14,10 +14,10 @@ const OurTeam: React.FC<OurTeamProps> = ({ data }) => {
 
   return (
     <ContLimits bg="bcon.teal.primary" p="3rem 0">
-      <Heading mb="2rem" color="white" w="100%" textAlign="center">
+      <Heading size="2xl" color="white" w="100%" textAlign="center">
         Our Team
       </Heading>
-      <CardGrid>
+      <CardGrid pt="5rem">
         {data.map(card => (
           <TeamCard key={card.id} cardData={card} />
         ))}
