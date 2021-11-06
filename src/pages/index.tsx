@@ -21,8 +21,6 @@ type HomePageProps = {
 const IndexPage: React.FC<HomePageProps> = ({ data }) => {
   const { contentfulHomePage } = data
 
-  console.log(data)
-
   return (
     <Layout>
       <Seo title="Home" />

@@ -10,9 +10,10 @@
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "add": "^2.0.6",
     "embla-carousel-react": "^5.0.1",
     "framer-motion": "^4.1.17",
-    "gatsby": "^3.13.0",
+    "gatsby": "^4.0.0",
     "gatsby-plugin-graphql-codegen": "^3.0.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
@@ -22,13 +23,15 @@
     "gatsby-plugin-typescript": "^3.13.0",
     "gatsby-source-contentful": "^5.13.0",
     "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-transformer-remark": "^5.1.0",
     "gatsby-transformer-sharp": "^3.13.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.16.1",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@types/node": "^16.9.6",

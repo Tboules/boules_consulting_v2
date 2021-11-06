@@ -14,8 +14,6 @@ type HowWeCanHelpProps = {
 }
 
 const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
-  console.log(data)
-
   return (
     <ContLimits bg="bcon.teal.primary" color="white">
       <Heading

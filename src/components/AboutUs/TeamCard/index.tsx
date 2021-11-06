@@ -9,7 +9,6 @@ type TeamCardProps = {
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ cardData }) => {
-  console.log(cardData)
   const frontImage = getImage(cardData.employeeImage.gatsbyImageData)
 
   return (

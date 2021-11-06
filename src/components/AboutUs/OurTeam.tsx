@@ -10,8 +10,6 @@ type OurTeamProps = {
 }
 
 const OurTeam: React.FC<OurTeamProps> = ({ data }) => {
-  console.log(data)
-
   return (
     <ContLimits bg="bcon.teal.primary" p="3rem 0">
       <Heading size="2xl" color="white" w="100%" textAlign="center">

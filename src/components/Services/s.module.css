@@ -1,0 +1,11 @@
+.htmlBox > p {
+  margin-bottom: 1rem;
+}
+
+.htmlBox li {
+  list-style: none;
+}
+
+.htmlBox > ul {
+  margin-bottom: 1rem;
+}

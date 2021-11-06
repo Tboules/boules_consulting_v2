@@ -9,9 +9,6 @@ type WhatWeDoProps = {
 }
 
 const WhatWeDo: React.FC<WhatWeDoProps> = ({ data }) => {
-  console.log(data)
-  const image = getImage(data.image.gatsbyImageData)
-
   return (
     <ContLimits p="3rem 0">
       <Heading mb="2rem" w="100%" textAlign="center" color="bcon.teal.dark">
