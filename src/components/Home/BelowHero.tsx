@@ -19,16 +19,16 @@ const BelowHero: React.FC<BelowHeroProps> = ({ data }) => {
 
   return (
     <ContLimits innerPadding={false}>
-      <SwitchFlex p="1rem 0">
+      <SwitchFlex p="4rem 0 0">
         <Box pos="relative" flex="1" overflow="hidden">
           <Text
             pos="absolute"
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            fontSize={{ base: "1rem", lg: "1.1rem" }}
+            fontSize={{ base: "1.1rem", lg: "1.3rem" }}
             textShadow="1px 2px 3px rgba(0, 0, 0, 0.2)"
-            w={{ base: "80%", md: "auto" }}
+            w="80%"
           >
             {data.text.text}
           </Text>

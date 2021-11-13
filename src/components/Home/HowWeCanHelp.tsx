@@ -15,15 +15,8 @@ type HowWeCanHelpProps = {
 
 const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
   return (
-    <ContLimits bg="bcon.teal.primary" color="white">
-      <Heading
-        fontWeight="600"
-        as="h2"
-        size="2xl"
-        w="100%"
-        textAlign="center"
-        pt="2rem"
-      >
+    <ContLimits bg="bcon.teal.primary" color="white" p="3rem 0">
+      <Heading fontWeight="600" as="h2" size="2xl" w="100%" textAlign="center">
         {data.text.text}
       </Heading>
       <Heading

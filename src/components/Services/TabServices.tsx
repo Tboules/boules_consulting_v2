@@ -2,24 +2,26 @@ import React, { useEffect } from "react"
 import { Box, Flex, Text } from "@chakra-ui/layout"
 import ContLimits from "../../components/ContLimits"
 import { TabList, Tabs, Tab, TabPanel, TabPanels } from "@chakra-ui/tabs"
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from "@chakra-ui/react"
 import { ContentfulGeneralCard } from "../../../graphql-types"
 import * as styles from "./s.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { useMediaQuery } from "@chakra-ui/react"
 
 type TabServicesProps = {
   data: ContentfulGeneralCard[]
 }
 
 const TabServices: React.FC<TabServicesProps> = ({ data }) => {
-  const [isLarge] = useMediaQuery("(min-width: 1200px)")
-  useEffect(() => {
-    console.log(isLarge)
-  }, [isLarge])
-
   return (
     <ContLimits p="4rem 0 0">
-      <Tabs isFitted minH="40vh" colorScheme="bcon">
+      {/* tab section */}
+      <Tabs display={{ base: "none", lg: "block" }} isFitted colorScheme="bcon">
         <TabList>
           {data.map(card => (
             <Tab
@@ -63,6 +65,31 @@ const TabServices: React.FC<TabServicesProps> = ({ data }) => {
           })}
         </TabPanels>
       </Tabs>
+
+      {/* accordion section */}
+      <Accordion display={{ base: "block", lg: "none" }} allowToggle>
+        {data.map(card => (
+          <AccordionItem key={card.id}>
+            <h2>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  {card.title}
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel>
+              <Box
+                flex="8"
+                className={styles.htmlBox}
+                dangerouslySetInnerHTML={{
+                  __html: card.description.childMarkdownRemark.html,
+                }}
+              ></Box>
+            </AccordionPanel>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </ContLimits>
   )
 }
