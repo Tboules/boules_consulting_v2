@@ -7,6 +7,8 @@ import {
 } from "../../../graphql-types"
 import Layout from "../../components/layout"
 import Banner from "../../components/Banner"
+import LatestPublication from "../../components/Community/LatestPublication"
+import InTheNews from "../../components/Community/InTheNews"
 
 type CommunityProps = {
   data: {
@@ -22,6 +24,8 @@ const Community: React.FC<CommunityProps> = ({ data }) => {
   return (
     <Layout>
       <Banner bannerData={contentfulCommunityPage.communityBanner} />
+      <LatestPublication data={allContentfulBlogPost} />
+      <InTheNews data={contentfulCommunityPage.newsCards} />
     </Layout>
   )
 }
@@ -34,7 +38,7 @@ export const query = graphql`
         slug
         title
         image {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 1.777778)
         }
         cardDescription
       }
@@ -49,7 +53,7 @@ export const query = graphql`
       }
       newsCards {
         image {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 1.777778)
         }
         title
         text {
