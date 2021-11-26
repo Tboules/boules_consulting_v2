@@ -9,6 +9,8 @@ import Layout from "../../components/layout"
 import Banner from "../../components/Banner"
 import LatestPublication from "../../components/Community/LatestPublication"
 import InTheNews from "../../components/Community/InTheNews"
+import CommunityBillboard from "../../components/Community/CommunityBillboard"
+import ReachOut from "../../components/ReachOut"
 
 type CommunityProps = {
   data: {
@@ -26,6 +28,8 @@ const Community: React.FC<CommunityProps> = ({ data }) => {
       <Banner bannerData={contentfulCommunityPage.communityBanner} />
       <LatestPublication data={allContentfulBlogPost} />
       <InTheNews data={contentfulCommunityPage.newsCards} />
+      <CommunityBillboard data={contentfulCommunityPage.communityCards} />
+      <ReachOut />
     </Layout>
   )
 }
@@ -69,7 +73,7 @@ export const query = graphql`
       communityCards {
         title
         image {
-          gatsbyImageData
+          gatsbyImageData(width: 150)
         }
         text {
           childMarkdownRemark {
