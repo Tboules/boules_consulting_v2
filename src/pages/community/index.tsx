@@ -20,7 +20,6 @@ type CommunityProps = {
 }
 
 const Community: React.FC<CommunityProps> = ({ data }) => {
-  console.log(data)
   const { allContentfulBlogPost, contentfulCommunityPage } = data
 
   return (

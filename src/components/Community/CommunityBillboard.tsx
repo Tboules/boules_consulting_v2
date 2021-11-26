@@ -14,8 +14,6 @@ type CommunityBillboardProps = {
 }
 
 const CommunityBillboard: React.FC<CommunityBillboardProps> = ({ data }) => {
-  console.log(data)
-
   return (
     <ContLimits p="2rem 0 3rem" bg="bcon.teal.primary">
       <WhiteSecHeader title="Community Billboard" />

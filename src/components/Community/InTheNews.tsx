@@ -12,8 +12,6 @@ type InTheNewsProps = {
 }
 
 const InTheNews: React.FC<InTheNewsProps> = ({ data }) => {
-  console.log(data)
-
   return (
     <ContLimits p="0 0 3rem">
       <BlueSecHeader title="In The News" />

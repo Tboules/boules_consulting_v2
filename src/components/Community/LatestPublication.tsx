@@ -12,8 +12,6 @@ type LatestPublicationProps = {
 }
 
 const LatestPublication: React.FC<LatestPublicationProps> = ({ data }) => {
-  console.log(data)
-
   return (
     <ContLimits p="3rem 0">
       <BlueSecHeader title="Latest Publications" />
