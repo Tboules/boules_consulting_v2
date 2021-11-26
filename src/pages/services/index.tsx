@@ -23,7 +23,11 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Banner bannerData={contentfulServicesPage.servicesBanner} />
+      <Banner
+        height={{ base: "20rem", md: "25rem" }}
+        bannerData={contentfulServicesPage.servicesBanner}
+        textLeft={true}
+      />
       <TabServices data={contentfulServicesPage.serviceCards} />
       <Testimonials data={contentfulHomePage.testimonialSlides} />
       <ReachOut />

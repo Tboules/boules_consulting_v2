@@ -15,7 +15,7 @@ type CommunityBillboardProps = {
 
 const CommunityBillboard: React.FC<CommunityBillboardProps> = ({ data }) => {
   return (
-    <ContLimits p="2rem 0 3rem" bg="bcon.teal.primary">
+    <ContLimits p="2rem 0 3rem" mb="4rem" bg="bcon.teal.primary">
       <WhiteSecHeader title="Community Billboard" />
       <CardGrid numOfColumns={2}>
         {data.map(card => {

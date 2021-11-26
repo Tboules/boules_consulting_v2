@@ -19,7 +19,10 @@ const AboutUs: React.FC<AboutUsProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Banner bannerData={contentfulAboutUsPage.aboutUsBanner} />
+      <Banner
+        height={{ base: "20rem", md: "25rem" }}
+        bannerData={contentfulAboutUsPage.aboutUsBanner}
+      />
       <WhatWeDo data={contentfulAboutUsPage.whatWeDo} />
       <OurTeam data={contentfulAboutUsPage.ourTeam} />
       <OurHappyCustomers data={contentfulAboutUsPage.carouselImages} />

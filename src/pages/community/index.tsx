@@ -24,7 +24,10 @@ const Community: React.FC<CommunityProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Banner bannerData={contentfulCommunityPage.communityBanner} />
+      <Banner
+        height={{ base: "20rem", md: "25rem" }}
+        bannerData={contentfulCommunityPage.communityBanner}
+      />
       <LatestPublication data={allContentfulBlogPost} />
       <InTheNews data={contentfulCommunityPage.newsCards} />
       <CommunityBillboard data={contentfulCommunityPage.communityCards} />
