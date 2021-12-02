@@ -38,7 +38,7 @@ const Community: React.FC<CommunityProps> = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulBlogPost {
+    allContentfulBlogPost(limit: 2) {
       nodes {
         id
         slug
