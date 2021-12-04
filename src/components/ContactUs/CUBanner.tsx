@@ -26,22 +26,29 @@ const CUBanner: React.FC<CUBannerProps> = ({ data }) => {
         bg="rgba(0, 0, 0, .55)"
         p="1rem 3rem"
         alignItems="center"
+        justifyContent={{ base: "center", lg: "flex-start" }}
       >
         <Heading
           mt="5%"
-          ml="25%"
+          ml={{ base: 0, xl: "15%" }}
           as="h1"
           color="white"
           fontSize={{ base: "3xl", lg: "6xl" }}
         >
           {data.heading}
         </Heading>
-        <VStack w="22rem" pos="absolute" bottom="10rem" right="20%">
+        <VStack
+          w="22rem"
+          pos="absolute"
+          bottom="10rem"
+          right="12%"
+          display={{ base: "none", lg: "flex" }}
+        >
           <ContactButtonCont to="mailto:info@boulesconsulting.org">
             <StaticImage src="../../assets/icons/mail.png" alt="mail icon" />
             <Text
               color="bcon.teal.primary"
-              fontSize="1.1rem"
+              fontSize="1.175rem"
               flex="1"
               textAlign="center"
             >
@@ -52,25 +59,25 @@ const CUBanner: React.FC<CUBannerProps> = ({ data }) => {
             <StaticImage src="../../assets/icons/phone.png" alt="mail icon" />
             <Text
               color="bcon.teal.primary"
-              fontSize="1.1rem"
+              fontSize="1.175rem"
               flex="1"
               textAlign="center"
             >
               +1(818) 599-2692
             </Text>
           </ContactButtonCont>
-          <ContactButtonCont to="mailto:info@boulesconsulting.org">
+          <ContactButtonCont to="https://www.instagram.com/boules_consulting/?hl=en">
             <StaticImage
               src="../../assets/icons/blue-insta.png"
               alt="mail icon"
             />
             <Text
               color="bcon.teal.primary"
-              fontSize="1.1rem"
+              fontSize="1.175rem"
               flex="1"
               textAlign="center"
             >
-              info@boulesconsulting.org
+              @boules_consulting
             </Text>
           </ContactButtonCont>
         </VStack>

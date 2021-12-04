@@ -17,12 +17,12 @@ const ReachOutForm = () => {
         <Input {...register("name")} />
       </FormControl>
       <FormControl pt="1rem">
-        <FormLabel>Company:</FormLabel>
-        <Input {...register("company")} />
+        <FormLabel>Email:</FormLabel>
+        <Input {...register("email")} />
       </FormControl>
       <FormControl pt="1rem">
         <FormLabel>Tell Us What You're Looking For:</FormLabel>
-        <Textarea {...register("description")} />
+        <Textarea minH="12rem" {...register("description")} />
       </FormControl>
       <Button
         type="submit"

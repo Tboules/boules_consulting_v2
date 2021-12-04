@@ -37,7 +37,7 @@ const ReachOut = () => {
               bg: "bcon.teal.primary",
             }}
           >
-            Get A Free Consultation!
+            Get a Free Consultation!
           </Heading>
           <Text w={{ base: "100%", lg: "85%" }} p="1rem 0">
             Tell us about your organization and how we can help you, and a

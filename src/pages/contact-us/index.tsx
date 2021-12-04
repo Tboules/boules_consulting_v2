@@ -1,9 +1,11 @@
 import React from "react"
 import { Flex, Text } from "@chakra-ui/layout"
-import Layout from "../../components/layout"
 import { graphql } from "gatsby"
+
 import { ContentfulContactPage } from "../../../graphql-types"
+import Layout from "../../components/layout"
 import CUBanner from "../../components/ContactUs/CUBanner"
+import CUFormArea from "../../components/ContactUs/CUFormArea"
 
 type ContactUsProps = {
   data: {
@@ -15,6 +17,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ data }) => {
   return (
     <Layout>
       <CUBanner data={data.contentfulContactPage.contactBanner} />
+      <CUFormArea />
     </Layout>
   )
 }

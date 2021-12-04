@@ -14,6 +14,7 @@ const ContactButtonCont: React.FC<ContactButtonContProps> = ({
   return (
     <chakra.a
       w="100%"
+      h="4.75rem"
       href={to}
       display="flex"
       justifyContent="space-between"
