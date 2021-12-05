@@ -13,34 +13,52 @@ const CUForm: React.FC<CUFormProps> = () => {
   const onSubmit = data => console.log(data)
 
   return (
-    <chakra.form w="80%" m="auto" onSubmit={handleSubmit(onSubmit)}>
+    <chakra.form
+      w={{ base: "100%", lg: "80%" }}
+      m="auto"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Heading fontWeight="500" textAlign="center" size="3xl">
         Submit An Inquiry
       </Heading>
-      <Text m="3rem 0" fontWeight="300" fontSize="1.5rem">
+      <Text
+        m={{ base: "1.5rem 0", lg: "3rem 0" }}
+        fontWeight="300"
+        fontSize={{ base: "1.1rem", lg: "1.5rem" }}
+      >
         Tell us about your organization and how we can help you, and a member of
         our team will reach out to you shortly to see how we can help you
         achieve your goals!
       </Text>
-      <FormControl display="flex">
+      <FormControl display="flex" flexDirection={{ base: "column", lg: "row" }}>
         <FormLabel flex="2">Name:</FormLabel>
         <Input
           size="lg"
           borderColor="bcon.teal.primary"
           flex="4"
+          minH="2.5rem"
           {...register("name")}
         />
       </FormControl>
-      <FormControl pt="1.2rem" display="flex">
+      <FormControl
+        pt="1.2rem"
+        display="flex"
+        flexDirection={{ base: "column", lg: "row" }}
+      >
         <FormLabel flex="2">Email:</FormLabel>
         <Input
           size="lg"
           borderColor="bcon.teal.primary"
           flex="4"
+          minH="2.5rem"
           {...register("email")}
         />
       </FormControl>
-      <FormControl pt="1.2rem" display="flex">
+      <FormControl
+        pt="1.2rem"
+        display="flex"
+        flexDirection={{ base: "column", lg: "row" }}
+      >
         <FormLabel flex="2">Tell Us What You're Looking For:</FormLabel>
         <Textarea
           resize="none"
@@ -51,7 +69,7 @@ const CUForm: React.FC<CUFormProps> = () => {
         />
       </FormControl>
       <Flex w="100%" justifyContent="center">
-        <Box flex="2"></Box>
+        <Box display={{ base: "none", lg: "block" }} flex="2"></Box>
         <Flex justifyContent="center" flex="4" m="auto">
           <Button
             type="submit"
