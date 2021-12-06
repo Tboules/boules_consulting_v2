@@ -1,10 +1,12 @@
+const path = require(`path`)
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const BlogTemplate = path.resolve(`src/templates/BlogPost.tsx`)
   const blogPostQuery = await graphql(`
     query BlogPosts {
-      allContentfulBlogPost {
+      allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
         nodes {
           id
           slug
@@ -16,7 +18,11 @@ exports.createPages = async ({ graphql, actions }) => {
           articleBody {
             raw
             references {
-              gatsbyImageData
+              ... on ContentfulAsset {
+                gatsbyImageData
+                __typename
+                contentful_id
+              }
             }
           }
         }
@@ -26,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   blogPostQuery.data.allContentfulBlogPost.nodes.forEach(node => {
     createPage({
-      path: node.slug,
+      path: `blog/${node.slug}`,
       component: BlogTemplate,
       context: {
         ...node,

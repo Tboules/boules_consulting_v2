@@ -9,6 +9,7 @@ import {
   OrderedList,
   ListItem,
   Divider,
+  Box,
 } from "@chakra-ui/layout"
 import ContLimits from "../ContLimits"
 import { MARKS, BLOCKS, INLINES } from "@contentful/rich-text-types"
@@ -25,36 +26,40 @@ const RichTextRenderer = ({ raw }) => {
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => {
         const { uri } = node.data
-        return <Link href={uri}>{children}</Link>
+        return (
+          <Link color="bcon.teal.primary" m="1rem 0" href={uri}>
+            {children}
+          </Link>
+        )
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text mb="1rem">{children}</Text>,
       [BLOCKS.HEADING_1]: (node, children) => (
-        <Heading as="h1" size="3xl">
+        <Heading fontWeight="500" m="1rem 0" as="h1" size="2xl">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <Heading as="h2" size="2xl">
+        <Heading fontWeight="500" m="1rem 0" as="h2" size="xl">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <Heading as="h3" size="xl">
+        <Heading fontWeight="500" m="1rem 0" as="h3" size="lg">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_4]: (node, children) => (
-        <Heading as="h4" size="lg">
+        <Heading fontWeight="500" m="1rem 0" as="h4" size="md">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_5]: (node, children) => (
-        <Heading as="h5" size="md">
+        <Heading fontWeight="500" m="1rem 0" as="h5" size="sm">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_6]: (node, children) => (
-        <Heading as="h6" size="sm">
+        <Heading fontWeight="500" m="1rem 0" as="h6" size="xs">
           {children}
         </Heading>
       ),
@@ -65,20 +70,25 @@ const RichTextRenderer = ({ raw }) => {
         <OrderedList>{children}</OrderedList>
       ),
       [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
-      [BLOCKS.HR]: (node, children) => <Divider />,
+      [BLOCKS.HR]: (node, children) => <Divider m="1.5rem 0 1rem" />,
       [BLOCKS.EMBEDDED_ASSET]: node => {
         const { gatsbyImageData } = node.data.target
         return (
-          <GatsbyImage
-            image={getImage(gatsbyImageData)}
-            alt="embedded blog photo"
-          />
+          <Box w={{ base: "95%", lg: "80%" }} m="2rem auto">
+            <GatsbyImage
+              image={getImage(gatsbyImageData)}
+              style={{
+                boxShadow: "1px 2px 3px rgba(0, 0, 0, 0.2)",
+              }}
+              alt="embedded blog photo"
+            />
+          </Box>
         )
       },
     },
   }
 
-  return <ContLimits>{renderRichText(raw, options)}</ContLimits>
+  return <Box>{renderRichText(raw, options)}</Box>
 }
 
 export default RichTextRenderer
