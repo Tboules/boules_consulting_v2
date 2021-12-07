@@ -15,7 +15,7 @@ const reachOutEmail = async (data: Email) => {
 
   try {
     const res = await fetch("/.netlify/functions/reachOut", opts)
-    console.log(res)
+    return res
   } catch (error) {
     console.log(error)
   }
