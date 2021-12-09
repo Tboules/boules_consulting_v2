@@ -10,6 +10,7 @@
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@hookform/resolvers": "^2.8.4",
     "@sendgrid/mail": "^7.6.0",
     "add": "^2.0.6",
     "embla-carousel-react": "^5.0.1",
@@ -33,7 +34,8 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.16.1",
     "react-icons": "^4.3.1",
-    "yarn": "^1.22.17"
+    "yarn": "^1.22.17",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "^16.9.6",

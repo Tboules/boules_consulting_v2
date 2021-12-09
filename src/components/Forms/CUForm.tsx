@@ -10,8 +10,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
-import api, { Email } from "../../../utils/api"
-import GeneralModal from "../../Modals/GeneralModal"
+import api, { Email } from "../../utils/api"
+import GeneralModal from "../Modals/GeneralModal"
 
 type CUFormProps = {}
 

@@ -1,7 +1,7 @@
 import ContLimits from "../../../components/ContLimits"
 import React from "react"
 import { Flex, Heading, HStack, Text, VStack } from "@chakra-ui/layout"
-import SubscibeForm from "./SubscibeForm"
+import SubscibeForm from "../../Forms/SubscibeForm"
 import FooterNav from "./FooterNav"
 import { StaticImage } from "gatsby-plugin-image"
 import { EmailIcon } from "@chakra-ui/icons"

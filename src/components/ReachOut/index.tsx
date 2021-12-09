@@ -4,7 +4,7 @@ import React from "react"
 import { Box, Flex, Heading, Text } from "@chakra-ui/layout"
 import { chakra } from "@chakra-ui/system"
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons"
-import ReachOutForm from "./ReachOutForm"
+import ReachOutForm from "../Forms/ReachOutForm"
 
 const ReachOut = () => {
   return (
@@ -69,6 +69,7 @@ const ReachOut = () => {
             +1(818) 599-2692
           </chakra.a>
         </Flex>
+
         <ReachOutForm />
       </SwitchFlex>
     </ContLimits>

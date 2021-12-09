@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/layout"
 import ContLimits from "../../ContLimits"
 import React from "react"
-import CUForm from "./CUForm"
+import CUForm from "../../Forms/CUForm"
 
 const CUFormArea = () => {
   return (

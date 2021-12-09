@@ -1,5 +1,4 @@
-import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/layout"
-import { useMediaQuery } from "@chakra-ui/media-query"
+import { Flex, Heading, Text, VStack } from "@chakra-ui/layout"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import { ContentfulEmployeeCard } from "../../../../graphql-types"
@@ -10,7 +9,6 @@ type TeamCardSafeProps = {
 
 const TeamCardSafe = ({ cardData }) => {
   const frontImage = getImage(cardData.employeeImage.gatsbyImageData)
-  const [isLargerThan320] = useMediaQuery("(min-width: 320px)")
 
   return (
     <Flex

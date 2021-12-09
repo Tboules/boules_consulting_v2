@@ -2,13 +2,23 @@ import { Button } from "@chakra-ui/button"
 import { Input } from "@chakra-ui/input"
 import { VStack, Text } from "@chakra-ui/layout"
 import { chakra, useDisclosure } from "@chakra-ui/react"
-import GeneralModal from "../../Modals/GeneralModal"
-import React from "react"
+import GeneralModal from "../Modals/GeneralModal"
+import React, { useEffect } from "react"
 import { useForm } from "react-hook-form"
-import api from "../../../utils/api"
+import api from "../../utils/api"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { subscribeFormSchema } from "./validationSchemas"
 
 const SubscibeForm = () => {
-  const { register, handleSubmit, reset } = useForm()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(subscribeFormSchema),
+  })
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   const onSubmit = async data => {
     try {
@@ -26,6 +36,7 @@ const SubscibeForm = () => {
       <chakra.form w="inherit" onSubmit={handleSubmit(onSubmit)}>
         <VStack>
           <Input
+            isInvalid={errors.email ? true : false}
             placeholder="Email:"
             bg="white"
             borderRadius="1.5rem"
@@ -35,6 +46,11 @@ const SubscibeForm = () => {
             w="90%"
             h="3rem"
           />
+          {errors.email && (
+            <Text color="red.700" fontSize=".8rem" fontWeight="bold">
+              {errors.email.message}
+            </Text>
+          )}
           <Button
             borderRadius="1.5rem"
             bg="bcon.gray.primary"
