@@ -1,9 +1,10 @@
 import React from "react"
-import { Flex, Heading, Text } from "@chakra-ui/layout"
+import { Heading } from "@chakra-ui/layout"
 import { ContentfulEmployeeCard } from "../../../graphql-types"
 import ContLimits from "../ContLimits"
 import CardGrid from "../CardGrid"
-import TeamCard from "./TeamCard"
+// import TeamCard from "./TeamCard"
+import TeamCardSafe from "./TeamCard/TeamCardSafe"
 
 type OurTeamProps = {
   data: ContentfulEmployeeCard[]
@@ -15,9 +16,9 @@ const OurTeam: React.FC<OurTeamProps> = ({ data }) => {
       <Heading size="2xl" color="white" w="100%" textAlign="center">
         Our Team
       </Heading>
-      <CardGrid pt="5rem">
+      <CardGrid numOfColumns={4} pt="5rem">
         {data.map(card => (
-          <TeamCard key={card.id} cardData={card} />
+          <TeamCardSafe key={card.id} cardData={card} />
         ))}
       </CardGrid>
     </ContLimits>

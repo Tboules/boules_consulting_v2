@@ -19,6 +19,7 @@ const CardGrid: React.FC<CardProps> = ({
       }}
       gridAutoRows="auto"
       gap={{ base: "1rem", lg: "1.5rem", xl: "2rem" }}
+      justifyItems="center"
       {...rest}
     >
       {children}
