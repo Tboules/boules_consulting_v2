@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
-import api from "../../../utils/api"
+import api, { Email } from "../../../utils/api"
 import GeneralModal from "../../Modals/GeneralModal"
 
 type CUFormProps = {}
@@ -19,9 +19,10 @@ const CUForm: React.FC<CUFormProps> = () => {
   const { register, handleSubmit, reset } = useForm()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const onSubmit = async data => {
+  const onSubmit = async (data: Email) => {
     try {
       await api.reachOutEmail(data)
+      await api.mailChimpAdd(data.senderEmail, data.senderName)
       onOpen()
       reset()
     } catch (error) {

@@ -24,7 +24,7 @@ const Footer = () => {
       <Flex height="90%" direction={{ base: "column", lg: "row" }}>
         <VStack h="100%" p="1rem" flexBasis="25%" spacing={{ base: 10, lg: 0 }}>
           <FooterHeading title="Subscribe Today!" />
-          <Flex flex="1" alignItems="center">
+          <Flex flex="1" alignItems="center" w="100%">
             <SubscibeForm />
           </Flex>
         </VStack>

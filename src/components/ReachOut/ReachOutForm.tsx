@@ -7,14 +7,15 @@ import { Textarea } from "@chakra-ui/textarea"
 import GeneralModal from "../Modals/GeneralModal"
 import React from "react"
 import { useForm } from "react-hook-form"
-import api from "../../utils/api"
+import api, { Email } from "../../utils/api"
 
 const ReachOutForm = () => {
   const { register, handleSubmit, reset } = useForm()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const onSubmit = async data => {
+  const onSubmit = async (data: Email) => {
     try {
       await api.reachOutEmail(data)
+      await api.mailChimpAdd(data.senderEmail, data.senderName)
       onOpen()
       reset()
     } catch (error) {

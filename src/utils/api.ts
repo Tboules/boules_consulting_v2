@@ -1,10 +1,12 @@
-type Email = {
+import addToMailchimp from "gatsby-plugin-mailchimp"
+
+export type Email = {
   body: string
   senderName: string
   senderEmail: string
 }
 
-const reachOutEmail = async (data: Email) => {
+const reachOutEmail = (data: Email) => {
   const opts: RequestInit = {
     method: "POST",
     headers: {
@@ -13,14 +15,17 @@ const reachOutEmail = async (data: Email) => {
     body: JSON.stringify(data),
   }
 
-  try {
-    const res = await fetch("/.netlify/functions/reachOut", opts)
-    return res
-  } catch (error) {
-    console.log(error)
+  return fetch("/.netlify/functions/reachOut", opts)
+}
+
+const mailChimpAdd = (email: string, name?: string) => {
+  if (name) {
+    return addToMailchimp(email, { FNAME: name })
   }
+  return addToMailchimp(email)
 }
 
 export default {
   reachOutEmail,
+  mailChimpAdd,
 }
