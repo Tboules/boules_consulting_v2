@@ -7,7 +7,8 @@ import React, { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import api from "../../utils/api"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { subscribeFormSchema } from "./validationSchemas"
+import { singleEmailSchema } from "./validationSchemas"
+import FormErrorMsg from "./FormErrorMsg"
 
 const SubscibeForm = () => {
   const {
@@ -16,13 +17,13 @@ const SubscibeForm = () => {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(subscribeFormSchema),
+    resolver: yupResolver(singleEmailSchema),
   })
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const onSubmit = async data => {
     try {
-      await api.mailChimpAdd(data.email)
+      await api.mailChimpAdd(data.senderEmail)
       onOpen()
       reset()
     } catch (error) {
@@ -36,21 +37,17 @@ const SubscibeForm = () => {
       <chakra.form w="inherit" onSubmit={handleSubmit(onSubmit)}>
         <VStack>
           <Input
-            isInvalid={errors.email ? true : false}
+            isInvalid={errors.senderEmail ? true : false}
             placeholder="Email:"
             bg="white"
             borderRadius="1.5rem"
             color="bcon.gray.primary"
-            {...register("email")}
+            {...register("senderEmail")}
             fontSize={{ base: ".875rem", xl: "1rem" }}
             w="90%"
             h="3rem"
           />
-          {errors.email && (
-            <Text color="red.700" fontSize=".8rem" fontWeight="bold">
-              {errors.email.message}
-            </Text>
-          )}
+          <FormErrorMsg errorMessage={errors.senderEmail?.message} />
           <Button
             borderRadius="1.5rem"
             bg="bcon.gray.primary"

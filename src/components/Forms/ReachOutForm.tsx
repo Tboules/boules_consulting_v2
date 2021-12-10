@@ -8,9 +8,17 @@ import GeneralModal from "../Modals/GeneralModal"
 import React from "react"
 import { useForm } from "react-hook-form"
 import api, { Email } from "../../utils/api"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { emailSchema } from "./validationSchemas"
+import FormErrorMsg from "./FormErrorMsg"
 
 const ReachOutForm = () => {
-  const { register, handleSubmit, reset } = useForm()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(emailSchema) })
   const { isOpen, onOpen, onClose } = useDisclosure()
   const onSubmit = async (data: Email) => {
     try {
@@ -28,15 +36,28 @@ const ReachOutForm = () => {
       <chakra.form flex="1" onSubmit={handleSubmit(onSubmit)}>
         <FormControl>
           <FormLabel>Name:</FormLabel>
-          <Input {...register("senderName")} />
+          <Input
+            isInvalid={errors.senderName ? true : false}
+            {...register("senderName")}
+          />
+          <FormErrorMsg errorMessage={errors.senderName?.message} />
         </FormControl>
         <FormControl pt="1rem">
           <FormLabel>Email:</FormLabel>
-          <Input {...register("senderEmail")} />
+          <Input
+            isInvalid={errors.senderEmail ? true : false}
+            {...register("senderEmail")}
+          />
+          <FormErrorMsg errorMessage={errors.senderEmail?.message} />
         </FormControl>
         <FormControl pt="1rem">
           <FormLabel>Tell Us What You're Looking For:</FormLabel>
-          <Textarea minH="12rem" {...register("body")} />
+          <Textarea
+            isInvalid={errors.body ? true : false}
+            minH="12rem"
+            {...register("body")}
+          />
+          <FormErrorMsg errorMessage={errors.body?.message} />
         </FormControl>
         <Button
           type="submit"

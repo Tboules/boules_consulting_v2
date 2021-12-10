@@ -5,12 +5,11 @@ import CUForm from "../../Forms/CUForm"
 
 const CUFormArea = () => {
   return (
-    <ContLimits h={{ base: "100%", lg: "46rem" }}>
+    <ContLimits p={{ base: "3rem 1rem", lg: "0rem 3rem" }} innerPadding={false}>
       <Flex
         bg="white"
-        p={{ base: "1.5rem", lg: "3rem" }}
-        h="110%"
-        transform={{ base: "none", lg: "translateY(-7.5rem)" }}
+        p={{ base: "3rem 1.5rem", lg: "3rem" }}
+        transform={{ base: "none", lg: "translateY(-6.5rem)" }}
         borderRadius="2rem"
         boxShadow="1px 2px 3px 1px rgba(0, 0, 0, 0.2)"
       >

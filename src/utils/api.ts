@@ -6,6 +6,10 @@ export type Email = {
   senderEmail: string
 }
 
+export type PromoEmail = {
+  senderEmail: string
+}
+
 const reachOutEmail = (data: Email) => {
   const opts: RequestInit = {
     method: "POST",
@@ -18,6 +22,17 @@ const reachOutEmail = (data: Email) => {
   return fetch("/.netlify/functions/reachOut", opts)
 }
 
+const sendPromoFile = (data: PromoEmail) => {
+  const opts: RequestInit = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }
+  return fetch("/.netlify/functions/promoEmail", opts)
+}
+
 const mailChimpAdd = (email: string, name?: string) => {
   if (name) {
     return addToMailchimp(email, { FNAME: name })
@@ -28,4 +43,5 @@ const mailChimpAdd = (email: string, name?: string) => {
 export default {
   reachOutEmail,
   mailChimpAdd,
+  sendPromoFile,
 }
