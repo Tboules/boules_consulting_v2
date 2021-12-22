@@ -54,6 +54,7 @@ const TabServices: React.FC<TabServicesProps> = ({ data }) => {
                   </Flex>
                   <Box
                     flex="8"
+                    p="2rem"
                     className={styles.htmlBox}
                     dangerouslySetInnerHTML={{
                       __html: card.description.childMarkdownRemark.html,

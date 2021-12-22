@@ -29,11 +29,11 @@ const HowWeCanHelp: React.FC<HowWeCanHelpProps> = ({ data }) => {
       >
         {data.text2.text2}
       </Heading>
-      <CardGrid pt="5rem">
+      <CardGrid numOfColumns={3} pt="5rem">
         {data.cards.map(card => {
           const image = getImage(card.icon.gatsbyImageData)
           return (
-            <CardBody key={card.title} position="relative">
+            <CardBody maxW="25rem" key={card.title} position="relative">
               <Box alignSelf="center" p="2rem">
                 <GatsbyImage
                   style={{ height: "80px" }}

@@ -41,22 +41,22 @@ const Footer = () => {
             </a>
           </HStack>
           <HStack spacing={8}>
-            <a href="/">
+            <a href="https://www.linkedin.com/company/mission501/?fbclid=IwAR3vpYgenaF2PuzfW38TEuHWausv4IYeEyqMhFvEdmOARGwn8LE2G7yG4mc">
               <StaticImage
                 src="../../../assets/icons/linkedin.svg"
-                alt="facebook link"
+                alt="LinkedIn Icon"
               />
             </a>
-            <a href="/">
+            <a href="https://www.facebook.com/boulesconsulting/">
               <StaticImage
                 src="../../../assets/icons/facebook.svg"
-                alt="facebook link"
+                alt="Facebook Icon"
               />
             </a>
-            <a href="/">
+            <a href="https://www.instagram.com/boules_consulting/?hl=en">
               <StaticImage
                 src="../../../assets/icons/instagram.svg"
-                alt="facebook link"
+                alt="Instagram Icon"
               />
             </a>
           </HStack>
