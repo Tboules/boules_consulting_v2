@@ -37,6 +37,7 @@ const SubscibeForm = () => {
       <chakra.form w="inherit" onSubmit={handleSubmit(onSubmit)}>
         <VStack>
           <Input
+            boxShadow="1px 2px 3px rgba(0, 0, 0, 0.1)"
             isInvalid={errors.senderEmail ? true : false}
             placeholder="Email:"
             bg="white"
@@ -50,14 +51,16 @@ const SubscibeForm = () => {
           <FormErrorMsg errorMessage={errors.senderEmail?.message} />
           <Button
             borderRadius="1.5rem"
-            bg="bcon.gray.primary"
+            bg="transparent"
+            border="1px solid white"
             p="0 2rem"
             type="submit"
             _hover={{ bg: "bcon.gray.dark" }}
             fontWeight="400"
-            fontSize={{ base: ".875rem", xl: "1rem" }}
+            fontSize="1rem"
             w="90%"
             h="3rem"
+            boxShadow="1px 2px 3px rgba(0, 0, 0, 0.1)"
           >
             Subscribe!
           </Button>
