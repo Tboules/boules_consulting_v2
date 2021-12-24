@@ -18,21 +18,38 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const RichTextRenderer = ({ raw }) => {
   const options = {
     renderMark: {
-      [MARKS.BOLD]: text => <Text fontWeight="bold">{text}</Text>,
-      [MARKS.ITALIC]: text => <Text fontStyle="italic">{text}</Text>,
-      [MARKS.UNDERLINE]: text => <Text textDecoration="underline">{text}</Text>,
+      [MARKS.BOLD]: text => (
+        <Text as="span" display="inline" fontWeight="bold">
+          {text}
+        </Text>
+      ),
+      [MARKS.ITALIC]: text => (
+        <Text as="span" display="inline" fontStyle="italic">
+          {text}
+        </Text>
+      ),
+      [MARKS.UNDERLINE]: text => (
+        <Text as="span" display="inline" textDecoration="underline">
+          {text}
+        </Text>
+      ),
       [MARKS.CODE]: text => <Code>{text}</Code>,
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => {
         const { uri } = node.data
         return (
-          <Link color="bcon.teal.primary" m="1rem 0" href={uri}>
-            {children}
+          <Link
+            display="inline"
+            color="bcon.teal.primary"
+            m="1rem 0"
+            href={uri}
+          >
+            {node.content[0].value}
           </Link>
         )
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text mb="1rem">{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <Box mb="1rem">{children}</Box>,
       [BLOCKS.HEADING_1]: (node, children) => (
         <Heading fontWeight="500" m="1rem 0" as="h1" size="2xl">
           {children}

@@ -28,7 +28,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
           {article.title}
         </Heading>
         <Text p="1rem 0 1.2rem">{article.cardDescription}...</Text>
-        <BCLink color="bcon.teal.primary" to={`/blog/${article.slug}`}>
+        <BCLink color="bcon.teal.primary" to={`/${article.slug}`}>
           Read more
         </BCLink>
       </Box>

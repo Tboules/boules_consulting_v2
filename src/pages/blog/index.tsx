@@ -18,9 +18,10 @@ const Blog: React.FC<BlogProps> = ({ data }) => {
     <Layout>
       <ContLimits minH="50vh">
         <CardGrid numOfColumns={3}>
-          {data.allContentfulBlogPost.nodes.map(article => (
-            <BlogCard key={article.id} article={article} />
-          ))}
+          {data.allContentfulBlogPost.nodes.map(article => {
+            if (article.slug == "test-references") return
+            return <BlogCard key={article.id} article={article} />
+          })}
         </CardGrid>
       </ContLimits>
     </Layout>

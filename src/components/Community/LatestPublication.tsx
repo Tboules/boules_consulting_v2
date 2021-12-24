@@ -20,9 +20,10 @@ const LatestPublication: React.FC<LatestPublicationProps> = ({ data }) => {
     <ContLimits p="3rem 0">
       <BlueSecHeader title="Latest Publications" />
       <CardGrid numOfColumns={2}>
-        {data.nodes.map(article => (
-          <BlogCard key={article.id} article={article} />
-        ))}
+        {data.nodes.map(article => {
+          if (article.slug == "test-references") return
+          return <BlogCard key={article.id} article={article} />
+        })}
       </CardGrid>
       <Flex p="1rem 0" justifyContent="flex-end" alignItems="center">
         <BCLink

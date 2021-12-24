@@ -4,15 +4,83 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const siteUrl = "https://boulesconsulting.org/"
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Boules Consulting`,
+    description: ``,
+    author: `Anthony Boules`,
+    siteUrl: `https://boulesconsulting.org/`,
   },
   plugins: [
     // `gatsby-plugin-graphql-codegen`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allContentfulEntry {
+            nodes {
+              ... on ContentfulHomePage {
+                updatedAt
+                slug
+              }
+              ... on ContentfulAboutUsPage {
+                slug
+                updatedAt
+              }
+              ... on ContentfulContactPage {
+                slug
+                updatedAt
+              }
+              ... on ContentfulCommunityPage {
+                slug
+                updatedAt
+              }
+              ... on ContentfulServicesPage {
+                slug
+                updatedAt
+              }
+              ... on ContentfulBlogPost {
+                slug
+                updatedAt
+              }
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allContentfulEntry: { nodes: allNodes },
+        }) => {
+          const contNodeMap = allNodes.reduce((acc, node) => {
+            const { slug } = node
+            if (!slug) return acc
+
+            acc[slug] = node
+
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...contNodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, updatedAt }) => {
+          return {
+            url: path,
+            lastmod: updatedAt,
+          }
+        },
+      },
+    },
     `gatsby-plugin-typescript`,
     {
       resolve: "@chakra-ui/gatsby-plugin",

@@ -31,12 +31,14 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   blogPostQuery.data.allContentfulBlogPost.nodes.forEach(node => {
-    createPage({
-      path: `blog/${node.slug}`,
-      component: BlogTemplate,
-      context: {
-        ...node,
-      },
-    })
+    if (node.slug != "test-references") {
+      createPage({
+        path: node.slug,
+        component: BlogTemplate,
+        context: {
+          ...node,
+        },
+      })
+    }
   })
 }
