@@ -27,10 +27,12 @@ const CommunityBillboard: React.FC<CommunityBillboardProps> = ({ data }) => {
               bg="white"
               key={card.title}
               direction="column"
+              boxShadow="1px 2px 3px rgba(0, 0, 0, 0.2)"
             >
               <Flex
                 direction={{ base: "column", sm: "row" }}
                 alignItems="center"
+                mb="1rem"
                 w="100%"
               >
                 <GatsbyImage
@@ -51,7 +53,7 @@ const CommunityBillboard: React.FC<CommunityBillboardProps> = ({ data }) => {
                   }}
                 ></Box>
               </Flex>
-              <Flex justifyContent="center">
+              <Flex justifyContent="center" mt=".5rem">
                 <chakra.a
                   bg="red.700"
                   borderRadius="3rem"

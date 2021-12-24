@@ -19,14 +19,21 @@ const InTheNews: React.FC<InTheNewsProps> = ({ data }) => {
         {data.map(card => {
           const image = getImage(card.image.gatsbyImageData)
           return (
-            <Flex key={card.title} flexDir="column">
+            <Flex
+              key={card.title}
+              flexDir="column"
+              boxShadow="1px 2px 3px rgba(0, 0, 0, 0.2)"
+              borderRadius="1rem"
+            >
               <GatsbyImage
                 style={{ borderRadius: "1rem", overflow: "hidden" }}
+                imgStyle={{ borderRadius: "1rem" }}
                 image={image}
                 alt="in the news thumbnail"
               />
-              <Text p="1rem 0 1.2rem">{card.title}</Text>
+              <Text p="1rem 1rem 1.2rem">{card.title}</Text>
               <chakra.a
+                p="0 1rem 1rem"
                 color="bcon.teal.primary"
                 _hover={{ textDecoration: "underline" }}
                 href={card.button.buttonLink}

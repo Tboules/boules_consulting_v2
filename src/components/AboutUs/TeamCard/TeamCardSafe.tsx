@@ -28,8 +28,9 @@ const TeamCardSafe = ({ cardData }) => {
             height: "10rem",
             width: "100%",
             flex: 1,
+            overflow: "hidden",
           }}
-          imgStyle={{ borderRadius: "1rem" }}
+          imgStyle={{ borderRadius: "1rem", width: "100%" }}
           objectFit="contain"
           alt="team member photo"
         />

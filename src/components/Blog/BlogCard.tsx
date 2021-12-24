@@ -19,8 +19,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
       borderRadius="1rem"
     >
       <GatsbyImage
-        style={{ overflow: "hidden" }}
+        style={{ overflow: "hidden", borderRadius: "1rem 1rem 0 0" }}
         image={image}
+        imgStyle={{ borderRadius: "1rem 1rem 0 0" }}
         alt="latest publication thumbnail"
       />
       <Box p="1rem" bg="white">
