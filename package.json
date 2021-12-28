@@ -16,6 +16,7 @@
     "embla-carousel-react": "^5.0.1",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.13.0",
+    "gatsby-plugin-google-gtag": "^4.4.0",
     "gatsby-plugin-graphql-codegen": "^3.0.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
