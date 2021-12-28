@@ -26,7 +26,6 @@ module.exports = {
       options: {
         trackingIds: ["UA-216023760-1"],
         gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
           anonymize_ip: true,
           cookie_expires: 0,
         },
