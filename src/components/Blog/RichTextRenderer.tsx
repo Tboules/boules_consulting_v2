@@ -49,7 +49,11 @@ const RichTextRenderer = ({ raw }) => {
           </Link>
         )
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <Box mb="1rem">{children}</Box>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <Box mb="1rem">
+          <Text>{children}</Text>
+        </Box>
+      ),
       [BLOCKS.HEADING_1]: (node, children) => (
         <Heading fontWeight="500" m="1rem 0" as="h1" size="2xl">
           {children}
